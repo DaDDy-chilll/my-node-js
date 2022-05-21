@@ -51,6 +51,6 @@ app.get("/todolist", (req, res) => {
   res.sendFile(__dirname + "/routefile/todolist.html");
 });
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
