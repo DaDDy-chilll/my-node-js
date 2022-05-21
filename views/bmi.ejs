@@ -1,0 +1,18 @@
+<%- include('header') -%>
+<div class="container d-flex justify-content-center align-content-center position-absolute top-50 start-50 translate-middle">
+  <form action="/bmi" method="post">
+      <div class="card m-3 bg-info bg-opacity-50">
+          <div class="card-title">
+              <h1 class="text-center m-1 calculatorheader_cs"><%= bmi %></h1>
+          </div>
+          <div class="card-body">
+              <input type="text" class="form-control form-control-lg m-2 rounded-8 text-center userlabel_cs" name="weight" id="fno" placeholder="Weight">
+              <input type="text" class="form-control form-control-lg m-2 rounded-8 text-center userlabel_cs" name="height" id="lno"  placeholder="Height">
+          </div>
+          <button class="btn btn-warning m-3" name="submit" id="submit" type="submit" value=<%= bmi %>>Result</button>
+      </div>
+    
+
+    </form>
+</div>
+<%- include('footer') -%>

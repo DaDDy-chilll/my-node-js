@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    height: 100vh;
+    position: relative;
+
+}
+
+.container {
+    z-index: 10;
+}
+
+.wavebottom_cs {
+    position: fixed;
+    bottom: -5px;
+    margin: 0;
+}
+
+.calculatorheader_cs {
+    font-family: 'Anton', sans-serif;
+}
+
+.userlabel_cs::placeholder {
+    font-family: 'Changa', sans-serif;
+    color: rgb(8, 36, 148);
+}
