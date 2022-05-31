@@ -1,1 +1,58 @@
-<h1>this is weather</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../public/css/weather.css">
+</head>
+<body>
+     <div class="container-fluid container_cs1 w-100 h-100">
+         <div class="row w-100 h-100">
+             <div class="col-6 img1_cs">
+                <div class="p1_cs">
+                    <img src="../public/img/p1.jpg" alt="p1" class="img-fluid" width="200">
+                </div>
+                <div class="p2_cs">
+                    <img src="../public/img/p5.jpg" alt="p2" class="img-fluid" width="150">
+                </div>
+                <div class="p3_cs">
+                    <img src="../public/img/p3.jpg" alt="p3" class="img-fluid" width="170">
+                </div>
+               
+             </div>
+             <div class="col-6 img2_cs">
+                <div class="p4_cs">
+                    <img src="../public/img/p4.jpg" alt="p4" class="img-fluid" width="250">
+                </div>
+                <div class="p5_cs">
+                    <img src="../public/img/p2.jpg" alt="p5" class="img-fluid" width="190">
+                </div>
+             </div>
+         </div>
+     </div>
+     <div class="container container_cs2 top-50 start-50 translate-middle">
+         <div class="col">
+             <div class="row mt-2 p-2">
+                 <div class="col-4 text-center"><img src="http://openweathermap.org/img/wn/10d@2x.png" class="img-fluid" width="150" height="160"></img></div>
+                 <div class="col-8 text-center"><p class="fw-bold mt-md-3 mt-3 text_cs">92°</p></div>
+             </div>
+         </div>
+         <div class="col mb-4">
+             <div class="text-center">
+                 <input class="input_cs fs-4 text-center" type="text" name="userSearch" id="userSearch">
+             </div>
+         </div>
+         <div class="col">
+             <div class="text-center">
+                <form action="/weather" method="post">
+                    <button type="submit" class="btn btn-danger rounded rounded-5 fs-6 button_cs">Search</button>
+                </form>
+             </div>
+             
+         </div>
+     </div>
+</body>
+</html>

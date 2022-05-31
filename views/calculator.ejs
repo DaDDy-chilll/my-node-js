@@ -1,24 +1,28 @@
-
-   <%- include('header') -%>
-      <div class="container d-flex justify-content-center align-content-center position-absolute top-50 start-50 translate-middle">
-        <form action="/calculator" method="post">
-            <div class="card m-3 bg-info bg-opacity-50">
-                <div class="card-title">
-                    <h1 class="text-center m-1 calculatorheader_cs"><%= calculator %></h1>
-                </div>
-                <div class="card-body">
-                    <input type="text" class="form-control form-control-lg m-2 rounded-8 text-center userlabel_cs" name="fno" id="fno" placeholder="First Number">
-                    <input type="text" class="form-control form-control-lg m-2 rounded-8 text-center userlabel_cs" name="lno" id="lno"  placeholder="Second Number">
-                </div>
-                <button class="btn btn-warning m-3" name="submit" id="submit" type="submit" value=<%= calculator %>>Sum</button>
-              </div>
-              
-              
-            </form>
-            <div class="position-absolute top-100 start-50 translate-middle mt-3">
-              <form action="/bmi" method="get">
-                <button class="btn btn-warning m-3" name="submit" id="submit" type="submit">BIM-Calculator</button>
-                </form>
-            </div>
+<%- include('header') -%>
+  <div
+    class="container d-flex justify-content-center align-content-center position-absolute top-50 start-50 translate-middle">
+    <form action="/calculator" method="post">
+      <div class="card m-3 bg-info bg-opacity-50">
+        <div class="card-title">
+          <h1 class="text-center m-1 calculatorheader_cs">
+            <%= calculator %>
+          </h1>
+        </div>
+        <div class="card-body">
+          <input type="text" class="form-control form-control-lg m-2 rounded-8 text-center userlabel_cs" name="fno"
+            id="fno" placeholder="First Number">
+          <input type="text" class="form-control form-control-lg m-2 rounded-8 text-center userlabel_cs" name="lno"
+            id="lno" placeholder="Second Number">
+        </div>
+        <button class="btn btn-warning m-3" name="submit" id="submit" type="submit" value=<%=calculator %>>Sum</button>
       </div>
-      <%- include('footer') -%>
+
+
+    </form>
+    <div class="position-absolute top-100 start-50 translate-middle mt-3">
+      <form action="/bmi" method="get">
+        <button class="btn btn-warning m-3" name="submit" id="submit" type="submit">BIM-Calculator</button>
+      </form>
+    </div>
+  </div>
+  <%- include('footer') -%>

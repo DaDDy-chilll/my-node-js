@@ -1,6 +1,9 @@
 const express = require("express");
+const https = require("https");
 const bdparser = require("body-parser");
 const res = require("express/lib/response");
+const { json } = require("express/lib/response");
+const { log } = require("console");
 // const textmodify = require(__dirname+'/public/js/calculator.js');
 
 let app = express();
@@ -38,7 +41,27 @@ app.post("/bmi", (req, res) => {
 //! Start Weather Route
 
 app.get("/weather", (req, res) => {
-  res.sendFile(__dirname + "/routefile/weather.html");
+  let zero = 0;
+  let imgsrc = "http://openweathermap.org/img/wn/10d@2x.png";
+  res.render("weather", { temp: zero, imgsrc: imgsrc });
+});
+
+app.post("/weather", (req, res) => {
+  const userSearch = req.body.userSearch;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${userSearch}&units=metric&appid=a91e35d21cd69d9b1fce078e882eafb1`;
+  https.get(url, (resp) => {
+    resp.on("data", (data) => {
+      const weatherData = JSON.parse(data);
+      try {
+        const temp = weatherData.main.temp;
+        const icon = weatherData.weather[0].icon;
+        const imgsrc = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+        res.render("weather", { temp: temp, imgsrc: imgsrc });
+      } catch (error) {
+        res.redirect("/weather");
+      }
+    });
+  });
 });
 
 //! End Weather Route
