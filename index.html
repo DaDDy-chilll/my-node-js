@@ -7,33 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nodejs Apps</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body>
-    <div class="container menulist_cs d-flex justify-content-center align-items-center">
+    <div class="container w-auto position-absolute top-50 start-50 translate-middle">
         <div class="card">
             <div class="card-title mb-5">
                 <h1 class="text-center headertext_cs">Nodejs Apps</h1>
             </div>
-            <div class="card-body g-2 d-flex justify-content-between align-items-center">
-                <form action="/calculator" method="get" class="mx-2">
-                    <button class="btn btn-danger text-white" type="submit">Calculator</button>
-                </form>
-                <form action="/weather" method="get" class="mx-2">
-                    <button class="btn btn-success text-white" type="submit">Weather</button>
-                </form>
-                <form action="/newsletter" method="get" class="mx-2">
-                    <button class="btn btn-warning text-white" type="submit">Newsletter</button>
-                </form>
-                <form action="/todolist" method="get" class="mx-2">
-                    <button class="btn btn-primary text-white" type="submit">To Do List</button>
-                </form>
+            <div class="card-body">
+                <div class="row  g-1 g-lg-3 text-center">
+                    <div class="col-lg-3 col-md">
+                        <form action="/calculator" method="get" class="">
+                            <button class="btn btn-danger text-white" type="submit">Calculator</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-md">
+                        <form action="/weather" method="get" class="">
+                            <button class="btn btn-success text-white" type="submit">Weather</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-md">
+                        <form action="/newsletter" method="get" class="">
+                            <button class="btn btn-warning text-white" type="submit">Newsletter</button>
+                        </form>
+                    </div>
+                    <div class="col-lg-3 col-md">
+                        <form action="/todolist" method="get" class="">
+                            <button class="btn btn-primary text-white" type="submit">To Do List</button>
+                        </form>
+                    </div>
+                </div>
+                
+              
+             
+               
             </div>
         </div>
 
     </div>
-    <div class="wave_cs position-fixed bottom-0">
+    <div class=" wave_cs position-fixed bottom-0">
         <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg"
             class="transition duration-300 ease-in-out delay-150">
             <defs>
