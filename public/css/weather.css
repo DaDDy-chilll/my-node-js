@@ -83,8 +83,17 @@ left: 80%;
         top: 65%;
         left:30%;
     }
+    .input_cs{
+        height: 30px;
+    }
     .container_cs2{
-        width: 450px;
-        height: 300px;
+        width: 350px;
+        height: 200px;
+    }
+}
+@media screen and (max-width:326px){
+    .container_cs2{
+        width: 250px;
+        height: 200px;
     }
 }
