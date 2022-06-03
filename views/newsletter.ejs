@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Letter</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="/public/css/newsletter.css"/>
-</head>
-<body>
+<%- include('newsletter/header.ejs') %> 
     <div class="container_cs">
         <div class="main_cs">
             <form action="" method="post">
@@ -23,8 +13,8 @@
                     </div>
                     <div class="w-md-50 list_cs">
                         <input class="listitem_CS listop_cs fs-lg-6 fs-5" type="text" name="fname" id="fname" placeholder="Fist Name" autocomplete="off">
-                        <input class="listitem_CS fs-lg-6 fs-5" type="text" name="sname" id="sname" placeholder="Last Name" autocomplete="off">
-                        <input class="listitem_CS listbot_cs fs-lg-6 fs-5" type="text" name="email" id="email" placeholder="Email" autocomplete="off">
+                        <input class="listitem_CS fs-lg-6 fs-5" type="text" name="lname" id="lname" placeholder="Last Name" autocomplete="off">
+                        <input class="listitem_CS listbot_cs fs-lg-6 fs-5" type="email" name="email" id="email" placeholder="Email" autocomplete="off">
                     </div>
                     <div class="button_cs mt-3 rounded">
                         <button class="btn btn-lg btn ls-wider button_cs" type="submit">Send</button>
@@ -34,7 +24,4 @@
             </form>
         </div>
     </div>
-
-    <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
-</body>
-</html>
+    <%- include('newsletter/footer.ejs') %> 

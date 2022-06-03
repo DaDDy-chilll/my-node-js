@@ -66,10 +66,47 @@ app.post("/weather", (req, res) => {
 
 //! End Weather Route
 ////-------------------------------------------------------
-
+//! Start Newsletter Route
 app.get("/newsletter", (req, res) => {
-  res.sendFile(__dirname + "/routefile/newsletter.html");
+  res.render('newsletter');
 });
+app.post('/newsletter',(req,res)=>{
+  const Fname = req.body.fname;
+  const Lname = req.body.lname;
+  const Email = req.body.email;
+  let data = {
+    members:[
+      {
+        email_address:Email,
+        status:'subscribed',
+        merge_fields:{
+          FNAME:Fname,
+          LNAME:Lname
+        }
+      }
+    ]
+  };
+  let jsonData = JSON.stringify(data);
+  let url = 'https://us14.api.mailchimp.com/3.0/lists/d8d49f05c7';
+  let options = {
+    method:'POST',
+    auth:'imwho:cb44547e935b56c1ae9e51e5b1903dfa-us14'
+  };
+  const request = https.request(url,options,(resp)=>{
+    if(resp.statusCode===200){
+      res.render('newsletter/finish',{text:'Thanks for Subscribed',btn:'new signup'});
+    }else{
+      res.render('newsletter/finish',{text:"Woo! Sorry Please Sigup Again",btn:'Try again'});
+    }
+    // resp.on('data',(data)=>{
+    //   console.log(JSON.parse(data));
+    // });
+  });
+  request.write(jsonData);
+  request.end();
+});
+//! End Newsletter Route
+////-------------------------------------------------------
 app.get("/todolist", (req, res) => {
   res.sendFile(__dirname + "/routefile/todolist.html");
 });

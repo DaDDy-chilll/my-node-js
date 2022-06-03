@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+body{
+    height: 100vh;
+    background-image: url(/img/Old\ Newspaper\ Background\ For\ Word\ I\ made\ it\ just\ for\ you.jpg);
+
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container_cs{
+    width: 90%;
+    height: 85%;
+    background-color: white;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main_cs{
+    width: 40%;
+    height: 55%;
+    background-color: rgb(47, 40, 40);
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.418);
+}
+.mailicon_cs{
+    width:100px;
+    height:100px;
+}
+.submain_cs{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.list_cs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.listitem_CS{
+    color: rgb(83, 71, 53);
+    font-family: 'Fjalla One', sans-serif;
+    width: 130%;
+    /* height: 10%; */
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.52);
+    text-align: center;
+    letter-spacing: 1px;
+}
+.listop_cs{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.listbot_cs{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.listitem_CS::placeholder{
+    text-align: center;
+    font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 1px;
+}
+.button_cs{
+    color: white;
+    background-color: rgb(61, 168, 64);
+}
+.button_cs:hover{
+    background-color:rgb(125, 207, 128) ;
+}
+@media screen and (max-width:860px) {
+    .main_cs{
+        width: 75%;
+        height: 40%;
+    }
+    .list_cs{
+        width: 90%;
+        height: 20%;
+    }
+    .listitem_CS{
+        width: 80%;
+        height: 20%;
+    }
+    .mailicon_cs{
+        width:85px;
+        height:85px;
+    }
+    .button_cs{
+        font-size: 14px;
+    }
+    
+}
+@media screen and (max-width:460px){
+    .main_cs{
+        width: 75%;
+        height: 38%;
+    }
+    .mailicon_cs{
+        width:80px;
+        height:80px;
+    }
+}
