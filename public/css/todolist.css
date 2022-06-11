@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+body {
+  background-color: #e9f7ca;
+  height: 100vh;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.head_cs {
+  font-family: "Concert One", cursive;
+  color: #f34213;
+}
+.scrollspy-example {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+  }
+.list_cs {
+  text-transform: capitalize;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list_cs p {
+    font-family: 'Fredoka One', cursive;
+  margin: 5px;
+}
+.card_cs {
+  border-radius: 10px;
+}
+
+li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.input_cs{
+    font-family: 'Fredoka One', cursive;
+}

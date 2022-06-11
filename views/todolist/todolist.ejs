@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/todolist.css"/>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center align-item-center">
+          <div class="col-lg-6 col-md-8 col-10">
+            <div class="card card_cs">
+              <div class="card-title text-center fs-1 mt-3 head_cs"><h1><%= listTitle %></h1></div>
+              <div class="card-body">
+                <!-- <ul class="list-group text-center fs-5">
+                  <li class="list-group-item list_cs">
+                    <p class="ps-lg-5 ps-md-3">apple</p>
+                    <i class="fa-solid fa-ban"></i>
+                  </li>
+                 
+                </ul> -->
+                <ul class="list-group text-center fs-5 scrollspy-example" data-mbs-spy="scroll" data-mbs-offset="0" tabindex="0">
+                <% listItem.forEach((item)=>{ %>
+                        <li class="list-group-item list_cs">
+                          <p class="ps-lg-5 ps-md-3"><%= item.name %></p>
+                          <i class="fa-solid fa-ban"></i>
+                        </li>
+                        <% }) %> 
+                </ul>
+              </div>
+              <div class="card-footer d-flex justify-content-center align-content-center flex-column">
+                <form action="/todolist" method="post" class="d-flex justify-content-center align-content-center flex-column">
+                    <input type="hidden" name="userTitle" value="<%= listTitle %> ">
+                    <input type="text" name="userdata" id="userdata" class="form-control text-center input_cs">
+                    <button type="submit" class="btn btn-success fs-5 mt-2">+</button>
+                </form>
+                <form action="/todolist/:userRoute" method="get" class="d-flex justify-content-center align-content-center flex-column mt-3">
+                    <input type="text" name="useroute" id="useroute" class="form-control text-center input_cs">
+                    <button type="submit" class="btn btn-success fs-5 mt-2">New</button>
+                </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
