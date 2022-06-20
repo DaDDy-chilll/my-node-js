@@ -173,30 +173,43 @@ app.post('/todolist',(req,res)=>{
   const useItem = new Items({
     name:newItem
   });
-  useItem.save();
-  res.redirect('/todolist');
+  if (listTitle === 'ToDay') {
+    useItem.save();
+    res.redirect('/todolist');
+  }else{
+    Routes.findOne({name:listTitle},(err,foundlist)=>{
+      foundlist.item.push(useItem);
+      foundlist.save();
+      res.redirect('/todolist/'+listTitle)
+    })
+  }
+
 });
 
-app.get(`/todolist/?:userRoute`,(req,res)=>{
+// app.param('userRoute',(req,res)=>{
+//   let subRoute = req.body.name;
+//   console.log(subRoute);
+// })
+app.get(`/todolist/:userRoute`,(req,res)=>{
   console.log('hi');
-  // const subRoute = req.params.;
-  // console.log(subRoute);
-  // Routes.findOne({name:Params},(err,foundlist)=>{
-  //   if(!err){
-  //     if(!foundlist){
-  //       const list = new Routes({
-  //         name:Params,
-  //         item:defaultItem
-  //       });
-  //       list.save();
-  //       console.log(foundlist.name,foundlist.item);
-  //       res.redirect('/'+Params);
-  //     }else{
-  //       console.log(foundlist.name,foundlist.item);
-  //       res.render('todolist/todolist.ejs',{listTitle:foundlist.name,listItem:foundlist.item});
-  //     }
-  //   }
-  // });
+  const Params  = req.params.userRoute;
+  console.log(Params);
+  Routes.findOne({name:Params},(err,foundlist)=>{
+    if(!err){
+      if(!foundlist){
+        const list = new Routes({
+          name:Params,
+          item:defaultItem
+        });
+        list.save();
+        // console.log(foundlist.name,foundlist.item);
+        res.redirect('/'+Params);
+      }else{
+        // console.log(foundlist.name,foundlist.item);
+        res.render('todolist/todolist.ejs',{listTitle:foundlist.name,listItem:foundlist.item});
+      }
+    }
+  });
 });
 
 //! End To DO List Route
